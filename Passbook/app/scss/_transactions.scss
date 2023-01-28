@@ -1,0 +1,122 @@
+.transaction {
+    margin-block: 20vh;
+    width: calc(100vw - 4ch);
+    height: 120vh;
+    background-color: rgb(30, 36, 65);
+    padding: 2ch;
+}
+
+.title {
+    & > * {
+        margin-block: auto;
+    }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.transaction__list{
+    --tabs-base: rgb(63, 71, 114);
+    --tabs-base-2: rgb(30, 36, 65);
+    --tabs-light: rgb(255, 218, 185);
+    --tabs-linear-shade: linear-gradient(45deg, rgb(155, 155, 255) , silver ,pink );
+
+    margin-top: 2ch;
+    display: grid;
+    gap: 2rem;
+    @media (min-width:768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    &:hover .tabs {
+        // background-color: burlywood;
+        transform: rotate(2.5deg);
+    }
+    & .tabs:hover {
+        transform: rotate(-2.5deg);
+    }
+}
+.tabs {
+    display: grid;
+    grid-template-columns: 30% 55% 15%;
+    width: 90%;
+    border-radius: 2rem;
+    padding: 2ch;
+    transition: all ease-in-out 500ms;
+}
+
+.tabs__icon {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 1rem;
+    display: grid;
+    place-content: center;
+    position: relative;
+}
+img{
+    position: absolute;
+    inset: 0 0 0 0;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+.tabs__name, .tabs__cost{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tabs__name {
+    margin-left: 1ch;
+}
+.tabs__cost{
+    align-items: flex-end;
+}
+
+.tabs:hover {
+    background-image: var(--tabs-linear-shade);
+    & .onTop {
+        color: black; 
+    }
+
+    & .tabs__icon{
+        background-image: none;
+        background-color: var(--tabs-base-2);
+        & img.inverted{
+            display: block;
+        }
+        & img.normal {
+            display: none;
+        }
+    }
+}
+
+.tabs .tabs__icon{ 
+    background-image: linear-gradient(45deg, rgb(155, 155, 255) , silver ,pink );
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    img.normal {
+        display: block;
+        opacity: 1;
+    } img.inverted {
+        display: none;
+    }
+}
+
+.tabs:not(:hover) {
+    background-color: var(--tabs-base);
+
+}
+
+
+.onTop {
+    color: white;
+    font-size: larger;
+    font-weight: 700;
+}
+.notOnTop {
+    color: grey;
+    font-size: small;
+}
