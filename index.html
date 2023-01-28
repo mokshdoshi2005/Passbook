@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passbook</title>
+    <link rel="shortcut icon" href="/resources/noun-cash-1013505.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/dist/style.css">
+    <script src="/app/js/main.js" defer type="module"></script>
+</head>
+<body>
+    <main>  
+        <h1>₹<pre id="Total-amount"></pre></h1>
+        <button id="test-button">See transitions</button>
+        <div class="profile-horizontal">
+            horizonal
+        </div>
+        <div style="display: flex;">Number of card <pre id="card-Number" style="margin-block: 0;margin-inline: 1ch;">1</pre></div>
+    </main>
+
+    <button class="Add-on" id="add">+</button>
+    <div class="Modal closed" id="addForm">
+        <div class="Modal__Box">
+            <button id="close-modal">&times;</button>
+            <ul class="flex">
+                <li data-price="10" id="AddAmount">₹10</li>
+                <li data-price="20" id="AddAmount">₹20</li>
+                <li data-price="50" id="AddAmount">₹50</li>
+                <li data-price="100" id="AddAmount">₹100</li>
+            </ul>
+
+        </div>
+    </div>
+
+    <!-- <section>
+        <ul class="flex">
+            <li data-price="10">₹10</li>
+            <li data-price="20">₹20</li>
+            <li data-price="50">₹50</li>
+            <li data-price="100">₹100</li>
+        </ul>
+    </section> -->
+    
+    <section class="Recent-history-cards" id="cards-Container">
+        
+        <div class="card" card="1">
+            <p class="catorigray">....6842</p>
+            <h2>₹<pre class="amount">20934.98</pre></h2>
+            <div class="details">
+                <pre class="details__person">Ronin hawkeye</pre>
+                <pre class="details__On">Exp. 25/12</pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="transaction">
+        <div class="title">
+            <h2 class="onTop">transaction</h2>
+            <p class="notOnTop">see all</p>
+        </div>
+    
+        <div class="transaction__list">
+            <div class="tabs">
+                <div class="tabs__icon">
+                    <img src="/resources/github-mark.svg" alt="" class="normal">
+                    <img src="/resources/github-mark-white.svg" alt="" class="inverted">
+                </div>
+                <div class="tabs__name">
+                    <p class="onTop">
+                        Github Brand
+                    </p>
+                    <p class="notOnTop">
+                        5 Aug, 2022
+                    </p>
+                </div>
+                <div class="tabs__cost">
+                    <p class="onTop">
+                        $168
+                    </p>
+                    <p class="notOnTop">
+                        Paypal
+                    </p>
+                </div>
+            </div>
+
+            <div class="tabs">
+                <div class="tabs__icon">
+                    <img src="/resources/spotify-mark-black.svg" alt="" class="normal">
+                    <img src="/resources/spotify-mark.svg" alt="" class="inverted">
+                </div>
+                <div class="tabs__name">
+                    <p class="onTop">
+                        Spotify Brand
+                    </p>
+                    <p class="notOnTop">
+                        6 Dec, 2022
+                    </p>
+                </div>
+                <div class="tabs__cost">
+                    <p class="onTop">
+                        $608
+                    </p>
+                    <p class="notOnTop">
+                        Airdrop
+                    </p>
+                </div>
+            </div>
+            
+            
+
+        </div>
+    </section>
+</body>
+</html>
