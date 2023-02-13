@@ -133,18 +133,24 @@ Input.addEventListener('change', e => {
             let on = document.querySelector("#Form_Date").value;
             if (element.dataset.type == "paid") {
                 str = "Paid " + to + " for " + catergory + "on the" + on;
-                alert(str);
+                UpdateUser(str, catergory, AddAmount, to, on)
+
                 return
             }
 
             str = "Spend " + AddAmount + " on " + catergory + " on the " + on;
-            alert(str);
-
-            let NewEntry = new Entry(catergory, AddAmount, to, on)
-            console.log(NewEntry)
+            UpdateUser(str, catergory, AddAmount, to, on)
         });
 
     };
 });
-    
+
+function UpdateUser(str, catergory, AddAmount, to, on) {
+    alert(str)
+    let NewEntry = new Entry(catergory, AddAmount, to, on)
+    Reg_Dict.AddEntry(NewEntry)
+    console.log(Reg_Dict)
+    Modal.classList.add('closed');
+};
+
 
